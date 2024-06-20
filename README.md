@@ -1,4 +1,4 @@
-# BlueBuild Template &nbsp; [![build-ublue](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/benoitlx/custom-desktop-image/actions/workflows/build.yml)
+# My Custom Desktop Immutable Image &nbsp; ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/benoitlx/custom-desktop-image/build.yml)
 
 This template is not yet populated, so there is nothing to see at all.
 
