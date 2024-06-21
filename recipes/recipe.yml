@@ -10,5 +10,10 @@ image-version: 40 # latest is also supported if you want new updates ASAP
 # you can include multiple instances of the same module
 modules:
   - from-file: hyprland-rpm.yml
+
+  - type: files
+    files:
+      - hyprland/usr: /usr
+
   - from-file: base-rpm-packages.yml
   - from-file: base-flatpak-packages.yml
