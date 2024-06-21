@@ -1,0 +1,8 @@
+type: default-flatpaks
+notify: true
+repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+repo-name: flathub
+repo-title: "Flathub (base)"
+system:
+  install:
+    - org.mozilla.firefox
