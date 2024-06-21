@@ -11,3 +11,4 @@ install:
   # terminal
 
   - kitty
+  - git
