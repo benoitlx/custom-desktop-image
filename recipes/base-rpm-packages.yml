@@ -1,0 +1,14 @@
+type: rpm-ostree
+install:
+  # editor
+
+  - neovim
+
+  # system
+
+  - nautilus
+
+  # terminal
+
+  - kitty
+  - git
