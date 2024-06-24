@@ -12,3 +12,9 @@ install:
 
   - kitty
   - git
+  - pavucontrol
+
+  # display
+  
+  - brightnessctl
+
