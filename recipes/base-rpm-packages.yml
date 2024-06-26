@@ -12,9 +12,13 @@ install:
 
   - kitty
   - git
-  - pavucontrol
+  - btop
 
   # display
   
   - brightnessctl
+
+  # audio
+
+  - pavucontrol
 
