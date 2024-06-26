@@ -17,3 +17,5 @@ modules:
 
   - from-file: base-rpm-packages.yml
   - from-file: base-flatpak-packages.yml
+
+  - from-file: chezmoi.yml
