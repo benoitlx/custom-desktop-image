@@ -1,2 +1,4 @@
 type: chezmoi
 repository: "https://github.com/benoitlx/dotfiles"
+all-users: false
+file-conflict-policy: replace
