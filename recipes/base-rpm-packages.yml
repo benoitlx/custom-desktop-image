@@ -22,3 +22,7 @@ install:
 
   - pavucontrol
 
+remove:
+  - firefox
+  - firefox-langpacks
+
