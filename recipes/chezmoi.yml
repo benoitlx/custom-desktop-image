@@ -1,4 +1,9 @@
 type: chezmoi
 repository: "https://github.com/benoitlx/dotfiles"
 all-users: false
-file-conflict-policy: replace
+run-every: '1d'
+wait-after-boot: '5m'
+disable-init: false
+disable-update: false
+file-conflict-policy: "replace"
+
