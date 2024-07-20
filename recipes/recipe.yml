@@ -19,3 +19,11 @@ modules:
   - from-file: base-flatpak-packages.yml
 
   - from-file: chezmoi.yml
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - IBMPlexMono 
+        - FiraCode
+        - Hack
+        - JetBrainsMono

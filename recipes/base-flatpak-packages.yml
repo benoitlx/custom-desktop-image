@@ -7,3 +7,12 @@ system:
   install:
     - org.mozilla.firefox
     - md.obsidian.Obsidian
+    - com.discordapp.Discord
+    - org.videolan.VLC
+    - com.synology.SynologyDrive
+    - com.vscodium.codium
+    - com.usebottles.bottles
+    - com.protonvpn.www
+    - org.mozilla.Thunderbird
+    - org.gnome.Evince
+    - org.gnome.Loupe
