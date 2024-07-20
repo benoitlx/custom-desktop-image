@@ -23,7 +23,7 @@ modules:
   - type: fonts
     fonts:
       nerd-fonts:
-        - BlexMono
+        - IBMPlexMono 
         - FiraCode
         - Hack
         - JetBrainsMono
