@@ -6,3 +6,4 @@ repo-title: "Flathub (base)"
 system:
   install:
     - org.mozilla.firefox
+    - md.obsidian.Obsidian
