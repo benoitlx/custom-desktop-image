@@ -10,6 +10,7 @@ install:
 
   # terminal
 
+  - nu
   - kitty
   - git
   - btop
