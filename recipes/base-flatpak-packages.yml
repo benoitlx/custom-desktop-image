@@ -16,3 +16,4 @@ system:
     - org.mozilla.Thunderbird
     - org.gnome.Evince
     - org.gnome.Loupe
+    - org.gnome.Boxes
