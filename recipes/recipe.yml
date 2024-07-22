@@ -13,7 +13,8 @@ modules:
 
   - type: files
     files:
-      - hyprland/usr: /usr
+      - source: system
+        destination: /
 
   - from-file: base-rpm-packages.yml
   - from-file: base-flatpak-packages.yml
