@@ -17,6 +17,7 @@ install:
   - git
   - btop
   - starship
+  - fastfetch
 
   # display
   
