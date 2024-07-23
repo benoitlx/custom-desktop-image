@@ -2,3 +2,4 @@ type: rpm-ostree
 install:
   - hyprland
   - wofi 
+  - waybar
