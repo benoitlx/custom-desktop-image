@@ -18,3 +18,4 @@ system:
     - org.gnome.Loupe
     - org.gnome.Boxes
     - org.gnome.baobab
+    - com.github.tchx84.Flatseal
