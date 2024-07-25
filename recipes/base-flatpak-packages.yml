@@ -5,7 +5,7 @@ repo-name: flathub
 repo-title: "Flathub (base)"
 system:
   install:
-    - org.mozilla.firefox
+    - io.gitlab.librewolf-community
     - md.obsidian.Obsidian
     - com.discordapp.Discord
     - org.videolan.VLC
