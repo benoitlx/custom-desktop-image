@@ -19,10 +19,6 @@ install:
   - starship
   - fastfetch
 
-  # display
-  
-  - brightnessctl
-
   # audio
 
   - pavucontrol
