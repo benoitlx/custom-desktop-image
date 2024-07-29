@@ -15,7 +15,7 @@ modules:
   - from-file: base-rpm-packages.yml
   - from-file: base-flatpak-packages.yml
 
-  - from-file: sddm-scripts.yml
+  # - from-file: sddm-scripts.yml
 
   - from-file: chezmoi.yml
   - from-file: fonts.yml
