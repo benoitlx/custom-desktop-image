@@ -12,13 +12,17 @@ modules:
   - from-file: sddm-packages.yml
   - from-file: hyprland-rpm.yml
 
+  - from-file: base-rpm-packages.yml
+  - from-file: base-flatpak-packages.yml
+
+  - from-file: sddm-scripts.yml
+
+  - from-file: chezmoi.yml
+  - from-file: fonts.yml
+
+  - from-file: sddm-systemd.yml
+
   - type: files
     files:
       - source: system
         destination: /
-
-  - from-file: base-rpm-packages.yml
-  - from-file: base-flatpak-packages.yml
-
-  - from-file: chezmoi.yml
-  - from-file: fonts.yml
