@@ -3,5 +3,4 @@ install:
   - hyprland
   - wofi 
   - waybar
-  - brightnessctl
   - xdg-desktop-portal-hyprland
