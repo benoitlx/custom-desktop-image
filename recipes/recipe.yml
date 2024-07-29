@@ -11,6 +11,7 @@ image-version: 40 # latest is also supported if you want new updates ASAP
 modules:
   - from-file: sddm-packages.yml
   - from-file: hyprland-rpm.yml
+  - from-file: hyprland-files.yml
 
   - from-file: base-rpm-packages.yml
   - from-file: base-flatpak-packages.yml
@@ -24,5 +25,5 @@ modules:
 
   - type: files
     files:
-      - source: system
-        destination: /
+      - source: system/usr
+        destination: /usr
