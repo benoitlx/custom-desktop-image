@@ -9,18 +9,13 @@ image-version: 40 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - from-file: sddm-packages.yml
   - from-file: hyprland-rpm.yml
   - from-file: hyprland-files.yml
 
   - from-file: base-rpm-packages.yml
   - from-file: base-flatpak-packages.yml
 
-  # - from-file: sddm-scripts.yml
-
   - from-file: chezmoi.yml
   - from-file: fonts.yml
-
-  - from-file: sddm-systemd.yml
 
   - from-file: common-files.yml
