@@ -23,7 +23,4 @@ modules:
 
   - from-file: sddm-systemd.yml
 
-  - type: files
-    files:
-      - source: system/usr
-        destination: /usr
+  - from-file: common-files.yml
