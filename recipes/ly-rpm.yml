@@ -1,0 +1,5 @@
+type: rpm-ostree
+install:
+  - kernel-devel
+  - libpam0g-dev
+  - libxcb-xkb-dev
