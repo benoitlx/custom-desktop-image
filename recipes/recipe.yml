@@ -5,6 +5,16 @@ description: This is my personal OS image including hyprland and nvidia driver.
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/base-nvidia
 image-version: 40 # latest is also supported if you want new updates ASAP
+stages:
+  - name: ly
+    from: docker.io/library/debian
+    modules:
+      - type: script
+        snippets:
+          - apt-get update && apt-get install -y git build-essential libpam0g-dev libxcb-xkb-dev
+          - wget https://ziglang.org/download/0.12.0/zig-linux-x86_64-0.12.0.tar.xz && tar xf zig-linux-x86_64-0.12.0.tar.xz
+          - git clone https://github.com/fairyglade/ly 
+          - cd ly && ../zig-linux-x86_64-0.12.0/zig build installsystemd
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -18,6 +28,26 @@ modules:
   - from-file: chezmoi.yml
   - from-file: fonts.yml
 
-  - from-file: ly-rpm.yml
+  - type: copy
+    from: ly
+    src: /etc/ly/*.sh
+    dest: /etc/ly/
+  - type: copy
+    from: ly
+    src: /etc/ly/lang/
+    dest: /etc/ly/lang/
+  - type: copy
+    from: ly
+    src: /etc/pam.d/ly
+    dest: /etc/pam.d/
+  - type: copy
+    from: ly
+    src: /usr/lib/systemd/system/ly.service
+    dest: /usr/lib/systemd/system/
+  - type: files
+    files:
+      - source: system/etc
+        destination: /etc
+
 
   - from-file: common-files.yml
