@@ -30,6 +30,10 @@ modules:
 
   - type: copy
     from: ly
+    src: /usr/bin/ly
+    dest: /usr/bin/
+  - type: copy
+    from: ly
     src: /etc/ly/*.sh
     dest: /etc/ly/
   - type: copy
