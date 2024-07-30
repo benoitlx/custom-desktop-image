@@ -21,6 +21,7 @@ stages:
 modules:
   - from-file: hyprland-rpm.yml
   - from-file: hyprland-files.yml
+  - from-file: hyprland-scripts.yml
 
   - from-file: base-rpm-packages.yml
   - from-file: base-flatpak-packages.yml
