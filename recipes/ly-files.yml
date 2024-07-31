@@ -15,10 +15,6 @@ modules:
     from: ly
     src: /etc/pam.d/ly
     dest: /etc/pam.d/
-  - type: copy
-    from: ly
-    src: /usr/lib/systemd/system/ly.service
-    dest: /usr/lib/systemd/system/
   - type: files
     files:
       - source: system/etc
