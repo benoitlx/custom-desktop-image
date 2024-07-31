@@ -1,7 +1,0 @@
-type: script
-snippets:
-  - semanage fcontext -a -t xdm_exec_t /usr/bin/ly
-  - semanage fcontext -C -l
-  - restorecon -v /usr/bin/ly
-  - matchpathcon -V /usr/bin/ly
-  - ls -Z /usr/bin/ly
