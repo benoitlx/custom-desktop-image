@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Tell build process to exit if there are any errors.
+set -oue pipefail
+
 # Install dependencies
 apt-get update
 apt-get install -y git build-essential libpam0g-dev libxcb-xkb-dev
