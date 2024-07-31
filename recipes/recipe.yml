@@ -10,11 +10,8 @@ stages:
     from: docker.io/library/debian
     modules:
       - type: script
-        snippets:
-          - apt-get update && apt-get install -y git build-essential libpam0g-dev libxcb-xkb-dev
-          - wget https://ziglang.org/download/0.12.0/zig-linux-x86_64-0.12.0.tar.xz && tar xf zig-linux-x86_64-0.12.0.tar.xz
-          - git clone https://github.com/fairyglade/ly 
-          - cd ly && ../zig-linux-x86_64-0.12.0/zig build installsystemd
+        scripts:
+          - ly-debian-install.sh
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
