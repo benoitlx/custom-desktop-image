@@ -6,7 +6,7 @@ Conflicts=getty@tty2.service
 
 [Service]
 Type=idle
-ExecStartPre=/usr/local/bin/ly-workaround
+ExecStartPre=/usr/etc/ly-workaround/ly-workaround
 ExecStart=/usr/bin/ly
 StandardInput=tty
 TTYPath=/dev/tty2
