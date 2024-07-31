@@ -56,6 +56,10 @@ modules:
   - type: script
     snippets:
       - "chcon system_u:object_r:xdm_exec_t:s0 /usr/bin/ly"
+  - type: systemd
+    system:
+      enabled:
+        - ly.service
 
 
   - from-file: common-files.yml
