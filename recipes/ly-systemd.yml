@@ -1,0 +1,6 @@
+type: systemd
+system:
+  enabled:
+    - ly-selinux-workaround.service
+  disabled:
+    - ly.service

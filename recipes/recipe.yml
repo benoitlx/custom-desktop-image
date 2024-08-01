@@ -5,22 +5,31 @@ description: This is my personal OS image including hyprland and nvidia driver.
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/base-nvidia
 image-version: 40 # latest is also supported if you want new updates ASAP
+stages:
+  - name: ly
+    from: docker.io/library/debian
+    modules:
+      - type: script
+        scripts:
+          - ly-debian-install.sh
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - from-file: sddm-packages.yml
   - from-file: hyprland-rpm.yml
   - from-file: hyprland-files.yml
+  - from-file: hyprland-scripts.yml
 
   - from-file: base-rpm-packages.yml
   - from-file: base-flatpak-packages.yml
 
-  # - from-file: sddm-scripts.yml
-
   - from-file: chezmoi.yml
   - from-file: fonts.yml
 
-  - from-file: sddm-systemd.yml
+  - from-file: ly-files.yml
+  - from-file: ly-systemd.yml
 
   - from-file: common-files.yml
+  - type: script
+    snippets:
+      - chmod +x /usr/etc/ly-workaround/ly-workaround

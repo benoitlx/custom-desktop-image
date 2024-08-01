@@ -1,0 +1,17 @@
+[Unit]
+Description=Selinux workaround for read-only system for the ly, TUI display manager
+After=systemd-user-sessions.service plymouth-quit-wait.service
+After=getty@tty2.service
+Conflicts=getty@tty2.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/etc/ly-workaround/ly-workaround
+ExecStart=/usr/bin/ly
+StandardInput=tty
+TTYPath=/dev/tty2
+TTYReset=yes
+TTYVHangup=yes
+
+[Install]
+Alias=display-manager.service

@@ -1,0 +1,21 @@
+modules:
+  - type: copy
+    from: ly
+    src: /usr/bin/ly
+    dest: /usr/bin/
+  - type: copy
+    from: ly
+    src: /etc/ly/*.sh
+    dest: /etc/ly/
+  - type: copy
+    from: ly
+    src: /etc/ly/lang/
+    dest: /etc/ly/lang/
+  - type: copy
+    from: ly
+    src: /etc/pam.d/ly
+    dest: /etc/pam.d/
+  - type: files
+    files:
+      - source: system/etc
+        destination: /etc
