@@ -19,3 +19,5 @@ system:
     - org.gnome.Boxes
     - org.gnome.baobab
     - com.github.tchx84.Flatseal
+    - io.github.dvlv.boxbuddyrs
+    - com.cassidyjames.butler
