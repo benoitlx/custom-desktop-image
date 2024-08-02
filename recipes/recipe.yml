@@ -28,9 +28,10 @@ modules:
   - from-file: fonts.yml
 
   - from-file: ly-files.yml
-  - from-file: ly-systemd.yml
 
   - from-file: common-files.yml
   - type: script
     snippets:
       - chmod +x /usr/etc/ly-workaround/ly-workaround
+
+  - from-file: systemd.yml

@@ -4,3 +4,4 @@ system:
     - ly-selinux-workaround.service
   disabled:
     - ly.service
+    - NetworkManager-wait-online.service
