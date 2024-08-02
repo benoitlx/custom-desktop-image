@@ -1,4 +1,4 @@
-# image will be published to ghcr.io/benoitlx/<name>
+# image will be published to ghcr.io/benoitlx/custom-hyprland-nvidia
 name: custom-hyprland-nvidia 
 description: This is my personal OS image including hyprland and nvidia driver.
 
