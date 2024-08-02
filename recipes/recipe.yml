@@ -17,6 +17,7 @@ stages:
 # you can include multiple instances of the same module
 modules:
   - from-file: hyprland-rpm.yml
+  - from-file: copr-hyprland.yml
   - from-file: hyprland-files.yml
   - from-file: hyprland-scripts.yml
 
