@@ -7,3 +7,4 @@ install:
   - waybar
   - xdg-desktop-portal-hyprland
   - swww
+  - hyprnome
