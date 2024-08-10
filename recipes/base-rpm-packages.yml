@@ -44,6 +44,7 @@ install:
   - google-noto-emoji-fonts
   - gnome-disk-utility
   - ddcutil
+  - tailscale
 
   # Themes
   - adwaita-qt5
