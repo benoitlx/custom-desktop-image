@@ -1,0 +1,13 @@
+# image will be published to ghcr.io/benoitlx/custom-desktop-image
+name: custom-bluefin-nvidia
+description: Personal image on top of bluefin os, including flatpak and rpm I use
+
+base-image: ghcr.io/ublue-os/bluefin-dx-asus-nvidia
+image-version: latest
+
+# module configuration executed sequentially
+modules:
+  - from-file: chezmoi.yml
+  - from-file: fonts.yml
+
+  - from-file: common-files.yml
