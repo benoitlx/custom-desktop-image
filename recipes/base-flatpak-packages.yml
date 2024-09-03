@@ -22,5 +22,6 @@ system:
     # - io.github.dvlv.boxbuddyrs
     - com.cassidyjames.butler
     - com.github.zocker_160.SyncThingy
+    - com.valvesoftware.Steam
   remove:
     - com.github.rafostar.Clapper
