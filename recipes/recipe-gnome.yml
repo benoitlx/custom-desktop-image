@@ -7,5 +7,7 @@ image-version: latest
 
 # module configuration executed sequentially
 modules:
+  - from-file: rpm-packages.yml  
+
   - from-file: chezmoi.yml
   - from-file: fonts.yml
