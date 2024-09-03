@@ -12,3 +12,5 @@ modules:
 
   - from-file: chezmoi.yml
   - from-file: fonts.yml
+
+  - type: justfiles
