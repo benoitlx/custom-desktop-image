@@ -11,6 +11,8 @@ install:
   - gnome-shell-extension-pop-shell
   - pop-launcher
 remove:
+  - gnome-classic-session-xsession
+  - gnome-classic-session
   - gnome-shell-extension-apps-menu
   - gnome-shell-extension-places-menu
   - gnome-shell-extension-window-list
