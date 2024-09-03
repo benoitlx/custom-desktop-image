@@ -10,14 +10,17 @@ system:
     - com.discordapp.Discord
     - org.videolan.VLC
     - com.synology.SynologyDrive
-    - com.vscodium.codium
+    # - com.vscodium.codium
     - com.usebottles.bottles
     - com.protonvpn.www
     - org.mozilla.Thunderbird
-    - org.gnome.Evince
+    # - org.gnome.Evince
     - org.gnome.Loupe
     - org.gnome.Boxes
-    - org.gnome.baobab
-    - com.github.tchx84.Flatseal
-    - io.github.dvlv.boxbuddyrs
+    # - org.gnome.baobab
+    # - com.github.tchx84.Flatseal
+    # - io.github.dvlv.boxbuddyrs
     - com.cassidyjames.butler
+    - com.github.zocker_160.SyncThingy
+  remove:
+    - com.github.rafostar.Clapper

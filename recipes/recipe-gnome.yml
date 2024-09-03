@@ -7,7 +7,8 @@ image-version: latest
 
 # module configuration executed sequentially
 modules:
-  - from-file: rpm-packages.yml  
+  - from-file: rpm-packages.yml
+  - from-file: base-flatpak-packages.yml
 
   - from-file: chezmoi.yml
   - from-file: fonts.yml
