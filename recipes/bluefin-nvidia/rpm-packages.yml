@@ -6,6 +6,9 @@ repos:
     # for auto-cpufreq
 install:
   
+  # system
+  - auto-cpufreq
+  
   # editor
   - neovim
   
@@ -13,8 +16,9 @@ install:
   - gnome-shell-extension-pop-shell
   - pop-launcher
 
-  # system
-  - auto-cpufreq
+  # gnome extension
+  - gnome-shell-extension-just-perfection
+
 remove:
   - gnome-classic-session-xsession
   - gnome-classic-session
