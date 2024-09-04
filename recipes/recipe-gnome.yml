@@ -14,5 +14,6 @@ modules:
   - from-file: bluefin-nvidia/fonts.yml
 
   - from-file: bluefin-nvidia/files.yml
+  - from-file: bluefin-nvidia/systemd.yml
 
   - type: justfiles
