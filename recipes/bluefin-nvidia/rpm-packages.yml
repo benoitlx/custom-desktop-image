@@ -4,7 +4,12 @@ repos:
     # for pop-launcher (packaged as a copr)
   # - https://copr.fedorainfracloud.org/coprs/sweetbeans/cabos/repo/fedora-%OS_VERSION%/sweetbeans-cabos-fedora-%OS_VERSION%.repo
     # for auto-cpufreq
+  - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
+    # trying niri
 install:
+  
+  # scrollable window manager
+  - niri
   
   # system
   # - auto-cpufreq
