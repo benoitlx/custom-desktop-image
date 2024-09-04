@@ -16,22 +16,22 @@ stages:
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - from-file: hyprland-rpm.yml
-  - from-file: copr-hyprland.yml
-  - from-file: hyprland-files.yml
-  - from-file: hyprland-scripts.yml
+  - from-file: hyprland-nvidia/hyprland-rpm.yml
+  - from-file: hyprland-nvidia/copr-hyprland.yml
+  - from-file: hyprland-nvidia/hyprland-files.yml
+  - from-file: hyprland-nvidia/hyprland-scripts.yml
 
-  - from-file: base-rpm-packages.yml
-  - from-file: base-flatpak-packages.yml
+  - from-file: hyprland-nvidia/base-rpm-packages.yml
+  - from-file: hyprland-nvidia/base-flatpak-packages.yml
 
-  - from-file: chezmoi.yml
-  - from-file: fonts.yml
+  - from-file: hyprland-nvidia/chezmoi.yml
+  - from-file: hyprland-nvidia/fonts.yml
 
-  - from-file: ly-files.yml
+  - from-file: hyprland-nvidia/ly-files.yml
 
-  - from-file: common-files.yml
+  - from-file: hyprland-nvidia/common-files.yml
   - type: script
     snippets:
       - chmod +x /usr/etc/ly-workaround/ly-workaround
 
-  - from-file: systemd.yml
+  - from-file: hyprland-nvidia/systemd.yml

@@ -1,0 +1,27 @@
+type: default-flatpaks
+notify: true
+repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+repo-name: flathub
+repo-title: "Flathub (base)"
+system:
+  install:
+    - org.mozilla.firefox
+    - md.obsidian.Obsidian
+    - com.discordapp.Discord
+    - org.videolan.VLC
+    - com.synology.SynologyDrive
+    # - com.vscodium.codium
+    - com.usebottles.bottles
+    - com.protonvpn.www
+    - org.mozilla.Thunderbird
+    # - org.gnome.Evince
+    - org.gnome.Loupe
+    - org.gnome.Boxes
+    # - org.gnome.baobab
+    # - com.github.tchx84.Flatseal
+    # - io.github.dvlv.boxbuddyrs
+    - com.cassidyjames.butler
+    - com.github.zocker_160.SyncThingy
+    - com.valvesoftware.Steam
+  remove:
+    - com.github.rafostar.Clapper
