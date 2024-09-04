@@ -7,10 +7,10 @@ image-version: latest
 
 # module configuration executed sequentially
 modules:
-  - from-file: rpm-packages.yml
-  - from-file: base-flatpak-packages.yml
+  - from-file: bluefin-nvidia/rpm-packages.yml
+  - from-file: bluefin-nvidia/base-flatpak-packages.yml
 
-  - from-file: chezmoi.yml
-  - from-file: fonts.yml
+  - from-file: bluefin-nvidia/chezmoi.yml
+  - from-file: bluefin-nvidia/fonts.yml
 
   - type: justfiles
