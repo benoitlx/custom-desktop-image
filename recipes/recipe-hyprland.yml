@@ -4,7 +4,7 @@ description: This is my personal OS image including hyprland and nvidia driver.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/base-nvidia
-image-version: 40 # latest is also supported if you want new updates ASAP
+image-version: latest # latest is also supported if you want new updates ASAP
 stages:
   - name: ly
     from: docker.io/library/debian
