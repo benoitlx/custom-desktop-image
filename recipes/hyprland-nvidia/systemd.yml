@@ -1,8 +1,0 @@
-type: systemd
-system:
-  enabled:
-    - ly-selinux-workaround.service
-    - tailscaled.service
-  disabled:
-    - ly.service
-    - NetworkManager-wait-online.service

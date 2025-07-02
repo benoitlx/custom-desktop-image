@@ -1,5 +1,0 @@
-type: systemd
-system:
-  enabled:
-    # - auto-cpufreq.service
-    - power-profiles-daemon.service

@@ -1,7 +1,0 @@
-type: fonts
-fonts:
-  nerd-fonts:
-    - IBMPlexMono 
-    - FiraCode
-    - Hack
-    - JetBrainsMono

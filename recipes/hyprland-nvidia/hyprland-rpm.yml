@@ -1,5 +1,0 @@
-type: rpm-ostree
-install:
-  - wofi 
-  - waybar
-  - xdg-desktop-portal-hyprland
