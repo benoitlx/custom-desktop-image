@@ -13,12 +13,27 @@ modules:
       - source: system
         destination: /
 
-  - type: rpm-ostree
+  - type: dnf 
     repos:
-      - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
+      copr:
+        - yalter/niri
+        - victorvintorez/tilingtools
     install:
-      - niri
-      - kitty
-      - vim
+      packages:
+        - niri
+        - kitty
+        - vim
+        - helix
+        - btop
+        - ironbar
+    remove:
+      packages:
+        - alacritty
+        - htop
+        - waybar
+# TODO
+# - remove unecessary flatpak
+# - add chezmoi module
+      
 
   - type: signing
