@@ -18,22 +18,66 @@ modules:
       copr:
         - yalter/niri
         - victorvintorez/tilingtools
+        - atim/starship 
+        - lihaohong/yazi
+        - varlad/zellij 
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
     install:
       packages:
-        - niri
+        # DE
+        - ironbar # rust
+        - niri # rust
+        - polkit
+        - dunst
+        - pavucontrol
+        # portal
+        - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-gnome
+        - gnome-keyring
+
+        # Term emulator
         - kitty
+
+        # editors
         - vim
-        - helix
-        - btop
-        - ironbar
+        - helix # rust
+
+        # term bling
+        - btop 
+        - starship
+        - fastfetch
+        - lolcat
+        - cava
+        - cowsay
+        - yazi
+        - zellij
+
+        # Misc background
+        - tailscale
+        - syncthing
+        - rsync
+
+        # dev
+        - gcc
     remove:
       packages:
         - alacritty
         - htop
         - waybar
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - IBMPlexMono
+        - FiraCode
+
+  - type: chezmoi
+    repository: "https://github.com/benoitlx/dotfiles"
+    wait-after-boot: "1m"
+
 # TODO
 # - remove unecessary flatpak
-# - add chezmoi module
       
 
   - type: signing
