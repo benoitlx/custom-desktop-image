@@ -67,10 +67,11 @@ modules:
         - yazi
         - zellij
 
-        # Misc background
+        # Misc
         - tailscale
         - syncthing
         - rsync
+        - luajit # lua jit compiler for ironbar Can remove this by disabling the feature during the build
 
         # dev
         - gcc
