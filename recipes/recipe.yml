@@ -7,6 +7,16 @@ description: personnal niri based image
 base-image: ghcr.io/ublue-os/base-main
 image-version: latest
 
+stages:
+  - name: ironbar
+    from: docker.io/library/rust
+    modules:
+      - type: script
+        snippets:
+          - apt-get update && apt-get install -y git
+          - git clone https://github.com/jakestanger.git
+          - cd ironbar && cargo build --release && install target/release/ironbar /usr/bin/ironbar
+
 modules:
   - type: files
     files:
