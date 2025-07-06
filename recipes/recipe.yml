@@ -13,7 +13,7 @@ stages:
     modules:
       - type: script
         snippets:
-          - apt-get update && apt-get install -y git
+          - apt-get update && apt-get install -y git build-essential libgtk-3-dev libgtk-layer-shell-dev libssl-dev libdbusmenu-gtk3-dev libpulse-dev libinput-dev lua-lgi libluajit2-5.1-dev
           - git clone https://github.com/jakestanger/ironbar.git
           - cd ironbar && RUSTFLAGS="-C target-feature=-crt-static" cargo build --release
           - mkdir -p /out/ && mv /ironbar/target/release/ironbar /out/ironbar
