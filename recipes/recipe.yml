@@ -15,8 +15,8 @@ stages:
         snippets:
           - apt-get update && apt-get install -y git
           - git clone https://github.com/jakestanger/ironbar.git
-          - cd ironbar && RUSTFLAGS="-C target-feature=-crt-static" cargo install
-          - mkdir -p /out/ && mv $CARGO_HOME/bin/ironbar /out/ironbar
+          - cd ironbar && RUSTFLAGS="-C target-feature=-crt-static" cargo build --release
+          - mkdir -p /out/ && mv /ironbar/target/release/ironbar /out/ironbar
 
 modules:
   - type: files
