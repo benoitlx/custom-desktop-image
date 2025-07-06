@@ -14,8 +14,9 @@ stages:
       - type: script
         snippets:
           - apt-get update && apt-get install -y git
-          - git clone https://github.com/jakestanger.git
-          - cd ironbar && cargo build --release && install target/release/ironbar /usr/bin/ironbar
+          - git clone https://github.com/jakestanger/ironbar.git
+          - cd ironbar && RUSTFLAGS="-C target-feature=-crt-static" cargo install
+          - mkdir -p /out/ && mv $CARGO_HOME/bin/ironbar /out/ironbar
 
 modules:
   - type: files
@@ -23,11 +24,15 @@ modules:
       - source: system
         destination: /
 
+  - type: copy
+    from: ironbar
+    src: /out/ironbar
+    dest: /usr/bin/
+
   - type: dnf 
     repos:
       copr:
         - yalter/niri
-        - victorvintorez/tilingtools
         - atim/starship 
         - lihaohong/yazi
         - varlad/zellij 
@@ -36,7 +41,6 @@ modules:
     install:
       packages:
         # DE
-        - ironbar # rust
         - niri # rust
         - polkit
         - dunst
