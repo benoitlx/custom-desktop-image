@@ -25,19 +25,21 @@ modules:
         destination: /
 
   - type: copy
-    from: ironbar
+    from: ironbar # rust
     src: /out/ironbar
     dest: /usr/bin/
 
   - type: dnf 
     repos:
       copr:
-        - yalter/niri
-        - atim/starship 
+        - yalter/niri # packaged by the maintainer
+        - atim/starship
         - lihaohong/yazi
         - varlad/zellij 
+        - alebastr/sway-extras # swww seems up to date here
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        # TODO add keys
     install:
       packages:
         # DE
@@ -49,6 +51,7 @@ modules:
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-gnome
         - gnome-keyring
+        - swww
 
         # Term emulator
         - kitty
@@ -59,13 +62,13 @@ modules:
 
         # term bling
         - btop 
-        - starship
+        - starship # rust
         - fastfetch
         - lolcat
         - cava
         - cowsay
-        - yazi
-        - zellij
+        - yazi # rust
+        - zellij # rust
 
         # Misc
         - tailscale
