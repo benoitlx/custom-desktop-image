@@ -45,11 +45,11 @@ modules:
         # DE
         - niri # rust
         - polkit
-        - dunst
         - pavucontrol
         # portal
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-gnome
+        - xwayland-satellite
         - gnome-keyring
         - swww
 
@@ -83,6 +83,7 @@ modules:
         - alacritty
         - htop
         - waybar
+        - firefox
 
   - type: fonts
     fonts:
@@ -94,8 +95,17 @@ modules:
     repository: "https://github.com/benoitlx/dotfiles"
     wait-after-boot: "1m"
 
-# TODO
-# - remove unecessary flatpak
-      
+  - type: default-flatpaks
+    notify: true
+    repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    repo-name: flathub
+    repo-title: "Flathub (base)"
+    system:
+      install:
+        - org.mozilla.firefox
+        - com.discordapp.Discord
+        - org.videolan.VLC
+        - org.mozilla.Thunderbird
+        - com.rtosta.zapzap
 
   - type: signing
