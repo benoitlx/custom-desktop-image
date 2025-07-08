@@ -60,6 +60,7 @@ modules:
         - niri # rust
         - polkit
         - pavucontrol
+        - rofi
         # portal
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-gnome
@@ -98,6 +99,7 @@ modules:
         - htop
         - waybar
         - firefox
+        - fuzzel
 
   - type: fonts
     fonts:
