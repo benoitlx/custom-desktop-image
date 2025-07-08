@@ -60,7 +60,7 @@ modules:
         - niri # rust
         - polkit
         - pavucontrol
-        - rofi
+        - rofi-wayland
         # portal
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-gnome
