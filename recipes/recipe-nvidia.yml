@@ -2,9 +2,9 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/benoitlx/niri
 
-name: niri 
-description: personnal niri based image
-base-image: ghcr.io/ublue-os/base-main
+name: niri-nvidia
+description: personnal niri based image with nvidia support
+base-image: ghcr.io/ublue-os/base-nvidia
 image-version: latest
 
 stages:

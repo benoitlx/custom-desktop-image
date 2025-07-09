@@ -1,0 +1,104 @@
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  - type: copy
+    from: ironbar # rust
+    src: /out/ironbar
+    dest: /usr/bin/
+
+  - type: copy
+    from: matugen # rust
+    src: /out/matugen
+    dest: /usr/bin/
+
+  - type: dnf 
+    repos:
+      copr:
+        - yalter/niri # packaged by the maintainer
+        - atim/starship
+        - lihaohong/yazi
+        - varlad/zellij 
+        - alebastr/sway-extras # swww seems up to date here
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        # TODO add keys
+    install:
+      packages:
+        # DE
+        - niri # rust
+        - polkit
+        - pavucontrol
+        - rofi-wayland
+        # portal
+        - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-gnome
+        - xwayland-satellite
+        - gnome-keyring
+        - swww
+
+        # Term emulator
+        - kitty
+
+        # editors
+        - vim
+        - helix # rust
+
+        # term bling
+        - btop 
+        - starship # rust
+        - fastfetch
+        - lolcat
+        - cava
+        - cowsay
+        - yazi # rust
+        - zellij # rust
+
+        # Misc
+        - tailscale
+        - syncthing
+        - rsync
+        - luajit # lua jit compiler for ironbar Can remove this by disabling the feature during the build
+
+        # dev
+        - gcc
+    remove:
+      packages:
+        - alacritty
+        - htop
+        - waybar
+        - firefox
+        - fuzzel
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - IBMPlexMono
+        - FiraCode
+      google-fonts:
+        - Dancing Script
+        - Pacifico
+        - Lobster
+        - Caveat
+        - Twinkle Star
+
+  - type: chezmoi
+    repository: "https://github.com/benoitlx/dotfiles"
+    wait-after-boot: "1m"
+
+  - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (base)"
+      install:
+        - org.mozilla.firefox
+        - com.discordapp.Discord
+        - org.videolan.VLC
+        - org.mozilla.Thunderbird
+        - com.rtosta.zapzap
+
+  - type: signing
