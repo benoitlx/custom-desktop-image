@@ -38,6 +38,7 @@ modules:
         - xwayland-satellite
         - gnome-keyring
         - swww
+        - nautilus
 
         # Term emulator
         - kitty
