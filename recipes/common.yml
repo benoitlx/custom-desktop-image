@@ -62,6 +62,7 @@ modules:
         - syncthing
         - rsync
         - luajit # lua jit compiler for ironbar Can remove this by disabling the feature during the build
+        - solaar
 
         # dev
         - gcc
@@ -101,5 +102,24 @@ modules:
         - org.videolan.VLC
         - org.mozilla.Thunderbird
         - com.rtosta.zapzap
-
+        - com.synology.SynologyDrive
+        - md.obsidian.Obsidian        
+        - com.usebottles.bottles
+        - com.logseq.Logseq
+        - org.gnome.Snapshot
+        - org.gnome.baobab
+        - com.unicornsonlsd.finamp
+        - com.github.iwalton3.jellyfin-media-player
+        - com.github.tchx84.Flatseal
+        - io.github.flattool.Warehouse
+        - org.gnome.World.PikaBackup
+        - com.protonvpn.www
+        - com.belmoussaoui.Authenticator
+        - org.gnome.Calculator
+        - org.gnome.Papers
+        - org.gnome.Loupe
+        - org.gnome.Boxes
+        - me.iepure.devtoolbox
+        - org.gnome.clocks
+        
   - type: signing
