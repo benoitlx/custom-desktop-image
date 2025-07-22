@@ -124,5 +124,10 @@ modules:
         - org.gnome.Boxes
         - me.iepure.devtoolbox
         - org.gnome.clocks
+
+  - type: systemd
+    user:
+      enabled:
+        - niri.service
         
   - type: signing
