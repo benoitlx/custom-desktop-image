@@ -126,10 +126,10 @@ modules:
         - org.gnome.Boxes
         - me.iepure.devtoolbox
         - org.gnome.clocks
+        - org.openrgb.OpenRGB # udev rules are already included in base image
 
   - type: akmods
     install:
-      - openrgb
       - xone
 
   # Copy custom justfiles
