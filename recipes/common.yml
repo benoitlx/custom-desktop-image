@@ -24,7 +24,9 @@ modules:
         - alebastr/sway-extras # swww seems up to date here
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-        # TODO add keys
+        - charm.repo
+      keys:
+        - https://repo.charm.sh/yum/gpg.key
     install:
       packages:
         # DE
@@ -57,6 +59,7 @@ modules:
         - cowsay
         - yazi # rust
         - zellij # rust
+        - gum
 
         # Misc
         - tailscale
@@ -125,9 +128,18 @@ modules:
         - me.iepure.devtoolbox
         - org.gnome.clocks
 
+  # Copy custom justfiles
+  - type: files
+    files:
+      - source: justfiles
+        destination: /usr/share/ublue-os/just
+
   - type: systemd
     user:
       enabled:
         - niri.service
+    system:
+      enabled:
+        - battery-charge-limit.service
         
   - type: signing
