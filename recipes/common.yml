@@ -68,7 +68,6 @@ modules:
         - luajit # lua jit compiler for ironbar Can remove this by disabling the feature during the build
         - solaar
         - davfs2 # to mount tailscale drive
-        - openrgb
 
         # dev
         - gcc
@@ -127,6 +126,11 @@ modules:
         - org.gnome.Boxes
         - me.iepure.devtoolbox
         - org.gnome.clocks
+
+  - type: akmods
+    install:
+      - openrgb
+      - xone
 
   # Copy custom justfiles
   - type: files
