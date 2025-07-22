@@ -39,6 +39,7 @@ modules:
         - gnome-keyring
         - swww
         - nautilus
+        - light
 
         # Term emulator
         - kitty
@@ -63,6 +64,8 @@ modules:
         - rsync
         - luajit # lua jit compiler for ironbar Can remove this by disabling the feature during the build
         - solaar
+        - davfs2 # to mount tailscale drive
+        - openrgb
 
         # dev
         - gcc
