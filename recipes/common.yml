@@ -35,6 +35,7 @@ modules:
         # DE
         - niri # rust
         - polkit
+        - mate-polkit
         - pavucontrol
         - rofi-wayland
         # portal
