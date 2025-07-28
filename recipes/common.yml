@@ -1,3 +1,6 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
 modules:
   - type: files
     files:
@@ -96,37 +99,35 @@ modules:
     wait-after-boot: "1m"
 
   - type: default-flatpaks
-    notify: true
-    system:
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      repo-name: flathub
-      repo-title: "Flathub (base)"
-      install:
-        - org.mozilla.firefox
-        - com.discordapp.Discord
-        - org.videolan.VLC
-        - org.mozilla.Thunderbird
-        - com.rtosta.zapzap
-        - com.synology.SynologyDrive
-        - md.obsidian.Obsidian        
-        - com.usebottles.bottles
-        - com.logseq.Logseq
-        - org.gnome.Snapshot
-        - org.gnome.baobab
-        - com.unicornsonlsd.finamp
-        - com.github.iwalton3.jellyfin-media-player
-        - com.github.tchx84.Flatseal
-        - io.github.flattool.Warehouse
-        - org.gnome.World.PikaBackup
-        - com.protonvpn.www
-        - com.belmoussaoui.Authenticator
-        - org.gnome.Calculator
-        - org.gnome.Papers
-        - org.gnome.Loupe
-        - org.gnome.Boxes
-        - me.iepure.devtoolbox
-        - org.gnome.clocks
-        - org.openrgb.OpenRGB # udev rules are already included in base image
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          - org.mozilla.firefox
+          - com.discordapp.Discord
+          - org.videolan.VLC
+          - org.mozilla.Thunderbird
+          - com.rtosta.zapzap
+          - com.synology.SynologyDrive
+          - md.obsidian.Obsidian        
+          - com.usebottles.bottles
+          - com.logseq.Logseq
+          - org.gnome.Snapshot
+          - org.gnome.baobab
+          - com.unicornsonlsd.finamp
+          - com.github.iwalton3.jellyfin-media-player
+          - com.github.tchx84.Flatseal
+          - io.github.flattool.Warehouse
+          - org.gnome.World.PikaBackup
+          - com.protonvpn.www
+          - com.belmoussaoui.Authenticator
+          - org.gnome.Calculator
+          - org.gnome.Papers
+          - org.gnome.Loupe
+          - org.gnome.Boxes
+          - me.iepure.devtoolbox
+          - org.gnome.clocks
+          - org.openrgb.OpenRGB # udev rules are already included in base image
 
   - type: akmods
     install:
