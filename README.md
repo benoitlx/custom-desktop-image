@@ -43,3 +43,7 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 ```bash
 cosign verify --key cosign.pub ghcr.io/blue-build/template
 ```
+
+# TODO
+
+- [ ] regarder comment faire pour que la partie `remove` du module dnf de bluebuild soit exécuter après le `install`
