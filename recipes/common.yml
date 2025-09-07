@@ -45,6 +45,9 @@ modules:
         - gnome-keyring
         - swww
         - nautilus
+        - samba
+        - gvfs-fuse
+        - gvfs-smb
         - light
 
         # Term emulator
