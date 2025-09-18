@@ -1,21 +1,40 @@
 # My Custom Desktop Immutable Image &nbsp; ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/benoitlx/custom-desktop-image/build.yml)
 
-This template is not yet populated, so there is nothing to see at all.
+> [!warning]
+> Only use this image if you're curious and not afraid of breaking changes
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+This repo is part of a hobby project where I'm learning about bootable OCI images and CI/CD. My ultimate goal is to end up with the ideal base image for my laptop and maybe other devices.
 
-After setup, it is recommended you update this README to describe your custom image.
+Altough I'm currently daily driving the `niri-nvidia` image, and it's fully operational for my needs, I do not guarantee anything. I'd be happy you get in touch with me if you are using this image.
+
+## Image details
+
+While multiple images are [available](https://github.com/benoitlx?tab=packages&repo_name=custom-desktop-image) through the Github Container Registry, those I'm currently maintaining are `niri-nvidia` and `niri`.
+
+These images are built using [Bluebuild template](https://github.com/blue-build/template) on top of Ublue OS's [base-main](https://github.com/ublue-os/main/pkgs/container/base-main) image.
+
+## Highlights
+
+- Based on the [niri](https://github.com/YaLTeR/niri) wayland compositor
+- Automatic download of my [dotfiles](https://github.com/benoitlx/dotfiles)
+- Shipped with [tailscale](https://tailscale.com/)
+- Important softwares :
+  - `kitty`
+  - `helix`
+  - `rofi`
+  - `ironbar`
+  - `starship`
 
 ## Installation
 
-> **Warning**  
+> [!warning]
 > [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
 
 To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/blue-build/template:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/benoitlx/niri:latest
   ```
 - Reboot to complete the rebase:
   ```
@@ -23,7 +42,7 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 - Then rebase to the signed image, like so:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/blue-build/template:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/benoitlx/niri:latest
   ```
 - Reboot again to complete the installation
   ```
@@ -43,7 +62,3 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 ```bash
 cosign verify --key cosign.pub ghcr.io/blue-build/template
 ```
-
-# TODO
-
-- [ ] regarder comment faire pour que la partie `remove` du module dnf de bluebuild soit exécuter après le `install`
