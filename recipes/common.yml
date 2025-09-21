@@ -17,7 +17,9 @@ modules:
     src: /out/matugen
     dest: /usr/bin/
 
-  - type: dnf 
+  - type: dnf
+    # source: ghcr.io/benoitlx/modules/dnf
+    # source: local
     repos:
       copr:
         - yalter/niri # packaged by the maintainer
@@ -78,13 +80,15 @@ modules:
 
         # dev
         - gcc
+      exclude:
+        - alacritty
+        - waybar
+        - waybar-git
+        - fuzzel
     remove:
       packages:
-        - alacritty
         - htop
-        - waybar
         - firefox
-        - fuzzel
 
   - type: fonts
     fonts:
