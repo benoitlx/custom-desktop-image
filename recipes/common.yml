@@ -25,6 +25,7 @@ modules:
         - lihaohong/yazi
         - varlad/zellij 
         - alebastr/sway-extras # swww seems up to date here
+        - erikreider/SwayNotificationCenter
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         - charm.repo
@@ -49,6 +50,7 @@ modules:
         - gvfs-fuse
         - gvfs-smb
         - light
+        - SwayNotificationCenter
 
         # Term emulator
         - kitty
