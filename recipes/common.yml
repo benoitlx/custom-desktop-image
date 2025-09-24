@@ -17,7 +17,7 @@ modules:
     src: /out/matugen
     dest: /usr/bin/
 
-  - type: dnf 
+  - type: dnf
     repos:
       copr:
         - yalter/niri # packaged by the maintainer
@@ -39,11 +39,7 @@ modules:
         - mate-polkit
         - pavucontrol
         - rofi-wayland
-        # portal
-        - xdg-desktop-portal-gtk
-        - xdg-desktop-portal-gnome
         - xwayland-satellite
-        - gnome-keyring
         - swww
         - nautilus
         - samba
@@ -51,6 +47,11 @@ modules:
         - gvfs-smb
         - light
         - SwayNotificationCenter
+
+        # part of niri's weak dependencies
+        # - xdg-desktop-portal-gtk
+        # - xdg-desktop-portal-gnome
+        # - gnome-keyring
 
         # Term emulator
         - kitty
@@ -80,13 +81,17 @@ modules:
 
         # dev
         - gcc
+      exclude:
+        - alacritty
+        - waybar
+        - waybar-git
+        - fuzzel
+        - mako
+        - swaybg
     remove:
       packages:
-        - alacritty
         - htop
-        - waybar
         - firefox
-        - fuzzel
 
   - type: fonts
     fonts:
