@@ -18,8 +18,6 @@ modules:
     dest: /usr/bin/
 
   - type: dnf
-    # source: ghcr.io/benoitlx/modules/dnf
-    # source: local
     repos:
       copr:
         - yalter/niri # packaged by the maintainer
@@ -40,17 +38,18 @@ modules:
         - mate-polkit
         - pavucontrol
         - rofi-wayland
-        # portal
-        - xdg-desktop-portal-gtk
-        - xdg-desktop-portal-gnome
         - xwayland-satellite
-        - gnome-keyring
         - swww
         - nautilus
         - samba
         - gvfs-fuse
         - gvfs-smb
         - light
+
+        # part of niri's weak dependencies
+        # - xdg-desktop-portal-gtk
+        # - xdg-desktop-portal-gnome
+        # - gnome-keyring
 
         # Term emulator
         - kitty
@@ -85,6 +84,8 @@ modules:
         - waybar
         - waybar-git
         - fuzzel
+        - mako
+        - swaybg
     remove:
       packages:
         - htop
