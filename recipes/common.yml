@@ -49,7 +49,7 @@ modules:
         - SwayNotificationCenter
 
         # part of niri's weak dependencies
-        # - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-gtk # don't know why it's not installed as part of niri's weak dependencies
         # - xdg-desktop-portal-gnome
         # - gnome-keyring
 
