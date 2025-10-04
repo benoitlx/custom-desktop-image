@@ -94,6 +94,10 @@ modules:
         - htop
         - firefox
 
+  - type: script
+    scripts:
+      - maplemono.nu
+
   - type: fonts
     fonts:
       nerd-fonts:
