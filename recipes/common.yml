@@ -145,9 +145,9 @@ modules:
           - org.gnome.clocks
           - org.openrgb.OpenRGB # udev rules are already included in base image
 
-  - type: akmods
-    install:
-      - xone
+  # - type: akmods
+  #   install:
+  #     - xone
 
   # Copy custom justfiles
   - type: files
