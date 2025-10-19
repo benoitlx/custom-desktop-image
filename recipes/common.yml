@@ -33,6 +33,8 @@ modules:
         - https://repo.charm.sh/yum/gpg.key
     install:
       packages:
+        - https://github.com/raphamorim/rio/releases/download/v0.2.32/rioterm-0.2.32-1.x86_64_wayland.rpm
+
         # DE
         - niri # rust
         - polkit
