@@ -50,9 +50,11 @@ modules:
         - light
         - SwayNotificationCenter
         - gtk-layer-shell # Required for ironbar
-        - ibus
-        - ibus-gtk3
+
+        # - ibus # already provided by some package
+        # - ibus-gtk3 # already provided by some package
         - ibus-mozc
+        - ibus-panel
 
         # part of niri's weak dependencies
         # - xdg-desktop-portal-gtk
