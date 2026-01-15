@@ -4,7 +4,7 @@
 
 name: niri-nvidia
 description: personnal niri based image with nvidia support
-base-image: ghcr.io/ublue-os/base-nvidia
+base-image: ghcr.io/blue-build/base-images/fedora-base-nvidia
 image-version: latest
 
 stages:
