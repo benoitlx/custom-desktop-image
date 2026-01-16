@@ -7,16 +7,6 @@ modules:
       - source: system
         destination: /
 
-  - type: copy
-    from: ironbar # rust
-    src: /out/ironbar
-    dest: /usr/bin/
-
-  - type: copy
-    from: matugen # rust
-    src: /out/matugen
-    dest: /usr/bin/
-
   - type: dnf
     repos:
       copr:
