@@ -4,7 +4,7 @@
 
 name: niri 
 description: personnal niri based image
-base-image: ghcr.io/ublue-os/base-main
+base-image: ghcr.io/blue-build/base-images/fedora-base
 image-version: latest
 
 stages:
