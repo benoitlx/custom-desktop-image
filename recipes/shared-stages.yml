@@ -1,12 +1,10 @@
 stages:
   - name: ironbar
-    from: docker.io/library/rust
+    from: ghcr.io/jakestanger/ironbar-build
     modules:
       - type: script
         snippets:
-          - apt-get update && apt-get install -y git build-essential
-          - apt-get install -y libgtk-4-dev libgtk4-layer-shell-dev libdbus-1-dev
-          - apt-get install -y libssl-dev libpulse-dev libinput-dev libluajit-5.1-dev lua-lgi
+          - apt-get update && apt-get install -y git
           - git clone https://github.com/jakestanger/ironbar.git
           - cd ironbar && RUSTFLAGS="-C target-feature=-crt-static" cargo build --release
           - mkdir -p /out/ && mv /ironbar/target/release/ironbar /out/ironbar
