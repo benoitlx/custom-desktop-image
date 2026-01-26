@@ -168,7 +168,7 @@ modules:
         - niri.service
         - ironbar.service
         - swaync.service
-        - swww-daemon.service
+        - swww.service
         - xwayland-satellite.service
         - ibus.service
     system:
