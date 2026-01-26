@@ -12,3 +12,6 @@ ConditionEnvironment=WAYLAND_DISPLAY
 ExecStart=/usr/sbin/swww-daemon
 Restart=on-failure
 RestartSec=1s
+
+[Install]
+WantedBy=default.target

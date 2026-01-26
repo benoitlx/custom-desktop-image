@@ -13,3 +13,6 @@ ExecStart=/usr/bin/ironbar
 ExecReload=/usr/bin/ironbar reload
 Restart=on-failure
 RestartSec=1s
+
+[Install]
+WantedBy=default.target
