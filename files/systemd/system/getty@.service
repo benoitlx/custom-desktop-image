@@ -35,7 +35,7 @@ ConditionPathExists=/dev/tty0
 
 [Service]
 # ExecStart=-/sbin/agetty --noreset --noclear --issue-file=/etc/issue:/etc/issue.d:/run/issue.d:/usr/lib/issue.d - ${TERM}
-ExecStart=-/sbin/agetty --noreset --autologin
+ExecStart=-/sbin/agetty --noreset --autologin bleroux
 Type=idle
 Restart=always
 RestartSec=0
