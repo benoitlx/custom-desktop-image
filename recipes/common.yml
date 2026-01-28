@@ -101,9 +101,9 @@ modules:
         - htop
         - firefox
 
-  - type: script
-    scripts:
-      - maplemono.nu
+  # - type: script
+  #   scripts:
+  #     - maplemono.nu
 
   - type: fonts
     fonts:
@@ -116,6 +116,10 @@ modules:
         - Lobster
         - Caveat
         - Twinkle Star
+      url-fonts:
+        - name: MapleMono-Variable
+          # renovate: datasource: github-release depName: subframe7536/maple-font
+          url: https://github.com/subframe7536/maple-font/releases/download/v7.9/MapleMono-Variable.zip
 
   - type: chezmoi
     repository: "https://github.com/benoitlx/dotfiles"
