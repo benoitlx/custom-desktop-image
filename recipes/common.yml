@@ -101,10 +101,6 @@ modules:
         - htop
         - firefox
 
-  # - type: script
-  #   scripts:
-  #     - maplemono.nu
-
   - type: fonts
     fonts:
       nerd-fonts:
@@ -120,6 +116,8 @@ modules:
         - name: MapleMono-Variable
           # renovate: datasource: github-release depName: subframe7536/maple-font
           url: https://github.com/subframe7536/maple-font/releases/download/v7.9/MapleMono-Variable.zip
+        - name: MapleMono-NF
+          url: https://github.com/subframe7536/maple-font/releases/download/v7.9/MapleMono-NF-unhinted.zip
 
   - type: chezmoi
     repository: "https://github.com/benoitlx/dotfiles"
