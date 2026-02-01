@@ -1,0 +1,16 @@
+# Copied with bluebuild
+
+[Unit]
+Description=Ibus (used for japanese input with mozc)
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/ibus start
+ExecReload=/usr/bin/ibus restart
+Restart=on-failure
+RestartSec=1s
+
+[Install]
+WantedBy=default.target

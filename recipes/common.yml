@@ -166,8 +166,14 @@ modules:
     user:
       enabled:
         - niri.service
+        - ironbar.service
+        - swaync.service
+        - swww.service
+        - xwayland-satellite.service
+        - ibus.service
     system:
       enabled:
         - battery-charge-limit.service
+        - polkit.service
         
   - type: signing
