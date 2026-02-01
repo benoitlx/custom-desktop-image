@@ -1,0 +1,20 @@
+stages:
+  - name: ironbar
+    from: ghcr.io/jakestanger/ironbar-build
+    modules:
+      - type: script
+        snippets:
+          - apt-get update && apt-get install -y git
+          - git clone https://github.com/jakestanger/ironbar.git
+          - cd ironbar && RUSTFLAGS="-C target-feature=-crt-static" cargo build --release
+          - mkdir -p /out/ && mv /ironbar/target/release/ironbar /out/ironbar
+
+  - name: matugen
+    from: docker.io/library/rust
+    modules:
+      - type: script
+        snippets:
+          - apt-get update && apt-get install -y git
+          - git clone https://github.com/InioX/matugen
+          - cd matugen && RUSTFLAGS="-C target-feature=-crt-static" cargo build --release
+          - mkdir -p /out/ && mv /matugen/target/release/matugen /out/matugen

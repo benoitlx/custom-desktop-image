@@ -2,4 +2,4 @@ cosign.key
 cosign.private
 /Containerfile
 /iso-output
-.bluebuild-*
+/.bluebuild-scripts_*
