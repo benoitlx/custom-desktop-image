@@ -87,6 +87,7 @@ modules:
         - solaar
         - davfs2 # to mount tailscale drive
         - kde-connect
+        - task
 
         # dev
         - gcc
