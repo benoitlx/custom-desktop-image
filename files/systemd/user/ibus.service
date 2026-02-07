@@ -7,10 +7,8 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
+Type=oneshot
 ExecStart=/usr/bin/ibus start
-ExecReload=/usr/bin/ibus restart
-Restart=on-failure
-RestartSec=1s
 
 [Install]
 WantedBy=default.target
