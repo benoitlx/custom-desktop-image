@@ -179,5 +179,7 @@ modules:
       enabled:
         - battery-charge-limit.service
         - polkit.service
+      disabled:
+        - NetworkManager-wait-online.service
         
   - type: signing
