@@ -1,6 +1,6 @@
 stages:
   - name: ironbar
-    from: ghcr.io/jakestanger/ironbar-build
+    from: ghcr.io/jakestanger/ironbar-build:master
     modules:
       - type: script
         snippets:
