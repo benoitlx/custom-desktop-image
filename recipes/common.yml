@@ -26,6 +26,7 @@ modules:
         - varlad/zellij 
         - alebastr/sway-extras # swww seems up to date here
         - erikreider/SwayNotificationCenter
+        - lukenukem/asus-linux # asusctl / asusd
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         - charm.repo
@@ -85,6 +86,7 @@ modules:
         - rsync
         - luajit # lua jit compiler for ironbar Can remove this by disabling the feature during the build
         - solaar
+        - asusctl # ROG keyboard backlight (aura), replaces OpenRGB
         - davfs2 # to mount tailscale drive
         - kde-connect
         - task
@@ -154,7 +156,6 @@ modules:
           - org.gnome.Boxes
           - me.iepure.devtoolbox
           - org.gnome.clocks
-          - org.openrgb.OpenRGB # udev rules are already included in base image
 
   # - type: akmods
   #   install:
