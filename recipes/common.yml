@@ -34,24 +34,31 @@ modules:
         - https://repo.charm.sh/yum/gpg.key
     install:
       packages:
-        - https://github.com/raphamorim/rio/releases/download/v0.2.32/rioterm-0.2.32-1.x86_64_wayland.rpm
-
         # DE
         - niri # rust
         - polkit
         - mate-polkit
-        - pavucontrol
         - rofi-wayland
         - xwayland-satellite
-        - swww
-        - nautilus
-        - samba
-        - gvfs-fuse
-        - gvfs-smb
-        - light
+        - awww
         - SwayNotificationCenter
         - gtk-layer-shell # Required for ironbar
+        - luajit # lua jit compiler for ironbar Can remove this by disabling the feature during the build
 
+        # FS
+        - nautilus
+        # - samba
+        - gvfs-fuse
+        - gvfs-smb
+
+        # Devices
+        - light
+        - pavucontrol
+        - solaar
+        - kde-connect
+        - asusctl # ROG keyboard backlight (aura), replaces OpenRGB
+
+        # Input method
         # - ibus # already provided by some package
         # - ibus-gtk3 # already provided by some package
         - ibus-mozc
@@ -62,14 +69,9 @@ modules:
         # - xdg-desktop-portal-gnome
         # - gnome-keyring
 
-        # Term emulator
+        # Term and tools
         - kitty
-
-        # editors
-        - vim
         - helix # rust
-
-        # term bling
         - btop 
         - starship # rust
         - fastfetch
@@ -84,12 +86,7 @@ modules:
         - tailscale
         - syncthing
         - rsync
-        - luajit # lua jit compiler for ironbar Can remove this by disabling the feature during the build
-        - solaar
-        - asusctl # ROG keyboard backlight (aura), replaces OpenRGB
         - davfs2 # to mount tailscale drive
-        - kde-connect
-        - task
 
         # dev
         - gcc
@@ -140,7 +137,6 @@ modules:
           - com.synology.SynologyDrive
           - md.obsidian.Obsidian        
           - com.usebottles.bottles
-          - com.logseq.Logseq
           - org.gnome.Snapshot
           - org.gnome.baobab
           - com.unicornsonlsd.finamp
@@ -148,7 +144,6 @@ modules:
           - com.github.tchx84.Flatseal
           - io.github.flattool.Warehouse
           - org.gnome.World.PikaBackup
-          - com.protonvpn.www
           - com.belmoussaoui.Authenticator
           - org.gnome.Calculator
           - org.gnome.Papers
@@ -156,6 +151,16 @@ modules:
           - org.gnome.Boxes
           - me.iepure.devtoolbox
           - org.gnome.clocks
+          - re.sonny.Eloquent
+          - org.qbittorrent.qBittorrent
+          - org.libreoffice.LibreOffice
+          - org.kicad.KiCad
+          - com.github.unrud.VideoDownloader
+          - org.gnome.Connections
+          - net.ankiweb.Anki
+          - io.github.dvlv.boxbuddyrs
+          - com.valvesoftware.Steam
+          - com.bitwarden.desktop
 
   # - type: akmods
   #   install:
