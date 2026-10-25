@@ -57,6 +57,7 @@ modules:
         - solaar
         - kde-connect
         - asusctl # ROG keyboard backlight (aura), replaces OpenRGB
+        - asusctl-rog-ui
 
         # Input method
         # - ibus # already provided by some package
