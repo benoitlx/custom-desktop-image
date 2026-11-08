@@ -11,4 +11,4 @@ Type=oneshot
 ExecStart=/usr/bin/ibus start
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target

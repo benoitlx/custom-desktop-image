@@ -34,6 +34,11 @@ modules:
         - https://repo.charm.sh/yum/gpg.key
     install:
       packages:
+        # Login (greetd autologins into niri-session, tuigreet as fallback)
+        - greetd
+        - greetd-selinux
+        - tuigreet
+
         # DE
         - niri # rust
         - polkit
@@ -103,6 +108,12 @@ modules:
         - htop
         - firefox
 
+  # After the dnf module, so it replaces the config.toml shipped by greetd
+  - type: files
+    files:
+      - source: greetd
+        destination: /etc/greetd
+
   - type: fonts
     fonts:
       nerd-fonts:
@@ -132,6 +143,7 @@ modules:
         install:
           - org.mozilla.firefox
           - com.discordapp.Discord
+          - dev.vencord.Vesktop
           - org.videolan.VLC
           - org.mozilla.Thunderbird
           - com.rtosta.zapzap
@@ -176,7 +188,6 @@ modules:
   - type: systemd
     user:
       enabled:
-        - niri.service
         - ironbar.service
         - swaync.service
         - swww.service
@@ -186,7 +197,12 @@ modules:
       enabled:
         - battery-charge-limit.service
         - polkit.service
+        - greetd.service
       disabled:
         - NetworkManager-wait-online.service
+      masked:
+        # Fedora 45 runs kmscon on tty1; greetd uses that VT instead.
+        # Other VTs keep kmscon through autovt@.
+        - kmsconvt@tty1.service
         
   - type: signing

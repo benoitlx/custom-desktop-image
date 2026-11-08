@@ -1,0 +1,17 @@
+# greetd configuration — see greetd(5)
+
+[terminal]
+# VT used by greetd. kmsconvt@tty1 is masked in the recipe so it doesn't fight
+# over this VT; other VTs keep kmscon (Fedora 45 default for autovt@).
+vt = 1
+
+# Autologin on boot (only used once per boot). The disk is already unlocked
+# by the LUKS passphrase, which acts as the authentication step.
+[initial_session]
+command = "niri-session"
+user = "bleroux"
+
+# Shown when the initial session exits (e.g. after quitting niri).
+[default_session]
+command = "tuigreet --time --asterisks --cmd niri-session"
+user = "greetd"
