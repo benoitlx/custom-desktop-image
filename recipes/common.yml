@@ -116,9 +116,6 @@ modules:
 
   - type: fonts
     fonts:
-      nerd-fonts:
-        - IBMPlexMono
-        - FiraCode
       google-fonts:
         - Dancing Script
         - Pacifico
@@ -126,6 +123,13 @@ modules:
         - Caveat
         - Twinkle Star
       url-fonts:
+        # Nerd Fonts as pinned .zip: the module's .tar.xz from releases/latest
+        # returned 504 from GitHub and broke the build (2026-11-09).
+        - name: IBMPlexMono-NF
+          # renovate: datasource: github-release depName: ryanoasis/nerd-fonts
+          url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/IBMPlexMono.zip
+        - name: FiraCode-NF
+          url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/FiraCode.zip
         - name: MapleMono-Variable
           # renovate: datasource: github-release depName: subframe7536/maple-font
           url: https://github.com/subframe7536/maple-font/releases/download/v7.9/MapleMono-Variable.zip
