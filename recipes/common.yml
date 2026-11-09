@@ -200,6 +200,8 @@ modules:
         - greetd.service
       disabled:
         - NetworkManager-wait-online.service
+        # No NFS mounts; it pulls gssproxy and makes greetd wait for the network.
+        - nfs-client.target
       masked:
         # Fedora 45 runs kmscon on tty1; greetd uses that VT instead.
         # Other VTs keep kmscon through autovt@.
