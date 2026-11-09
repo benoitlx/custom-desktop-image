@@ -12,3 +12,12 @@ stages:
 
 modules:
   - from-file: common.yml
+
+  # Boot speed: keep NVIDIA out of the initramfs (see the file for details)
+  - type: files
+    files:
+      - source: dracut-nvidia
+        destination: /usr/lib/dracut/dracut.conf.d
+
+  # Must stay last: rebuilds the initramfs with every change above
+  - type: initramfs
