@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-11-13T22:17:12+0000",
+  "builds": [
+    {
+      "id": "20261113-2216",
+      "path": "niri/20261113-2216",
+      "has_advisories": true,
+      "image": "ghcr.io/benoitlx/niri:latest",
+      "name": "niri",
+      "digest": "sha256:0261014ae386c59bf583ffd41c9fb9212221cf71d17201e299e4543c2e4db510",
+      "version": "45.20261112.0",
+      "created": "2026-11-13T22:16:14.526951864+00:00",
+      "inspected_at": "2026-11-13T22:17:11+0000",
+      "release": "F45",
+      "packages": 1678,
+      "size": 5864139830,
+      "pending_fixes": 4
+    },
+    {
+      "id": "20261113-1254",
+      "path": "niri/20261113-1254",
+      "has_advisories": true,
+      "image": "ghcr.io/benoitlx/niri:latest",
+      "name": "niri",
+      "digest": "sha256:71e55e3387398fcda6930ab2af55be666fc08628b7c3835bf31d0385d9fa00e8",
+      "version": "45.20261112.0",
+      "created": "2026-11-13T12:54:57.258260452+00:00",
+      "inspected_at": "2026-11-13T13:09:48+0000",
+      "release": "F45",
+      "packages": 1678,
+      "size": 5864139830,
+      "pending_fixes": 4
+    },
+    {
+      "id": "20261113-2215",
+      "path": "niri-nvidia/20261113-2215",
+      "has_advisories": true,
+      "image": "ghcr.io/benoitlx/niri-nvidia:latest",
+      "name": "niri-nvidia",
+      "digest": "sha256:1c14316eff19807b13ff25f547be3adfbfbdfe6b2ebced1b474a4bd4078ae865",
+      "version": "45.20261112.0",
+      "created": "2026-11-13T22:15:52.632058256+00:00",
+      "inspected_at": "2026-11-13T22:17:12+0000",
+      "release": "F45",
+      "packages": 1705,
+      "size": 7019199136,
+      "pending_fixes": 4
+    },
+    {
+      "id": "20261113-1255",
+      "path": "niri-nvidia/20261113-1255",
+      "has_advisories": true,
+      "image": "ghcr.io/benoitlx/niri-nvidia:latest",
+      "name": "niri-nvidia",
+      "digest": "sha256:8129eb5f86863cfa7d614484a697432db5ef7f59cbfdc0cde6acc48d60236abe",
+      "version": "45.20261112.0",
+      "created": "2026-11-13T12:55:15.389582240+00:00",
+      "inspected_at": "2026-11-13T13:11:08+0000",
+      "release": "F45",
+      "packages": 1705,
+      "size": 7019199136,
+      "pending_fixes": 4
+    }
+  ]
+}

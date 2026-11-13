@@ -1,0 +1,12 @@
+{
+  "image": "ghcr.io/benoitlx/niri-nvidia:latest",
+  "name": "niri-nvidia",
+  "digest": "sha256:8129eb5f86863cfa7d614484a697432db5ef7f59cbfdc0cde6acc48d60236abe",
+  "version": "45.20261112.0",
+  "created": "2026-11-13T12:55:15.389582240+00:00",
+  "inspected_at": "2026-11-13T13:11:08+0000",
+  "release": "F45",
+  "packages": 1705,
+  "size": 7019199136,
+  "pending_fixes": 4
+}
