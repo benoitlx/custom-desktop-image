@@ -13,6 +13,10 @@ While multiple images are [available](https://github.com/benoitlx?tab=packages&r
 
 These images are built using [Bluebuild template](https://github.com/blue-build/template) on top of Ublue OS's [base-main](https://github.com/ublue-os/main/pkgs/container/base-main) image.
 
+## Package explorer
+
+After each build, [image-scope](https://github.com/benoitlx/image-scope) inspects the rpm packages of both images (`.github/workflows/image-scope.yml`): the dependency graph of the 30 latest builds, with Fedora security fixes still to pick up, is browsable at **https://benoitlx.github.io/custom-desktop-image/**, and each workflow run summarizes what changed since the previous build.
+
 ## Highlights
 
 - Based on the [niri](https://github.com/YaLTeR/niri) wayland compositor

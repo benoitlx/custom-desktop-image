@@ -1,0 +1,99 @@
+# Après chaque build des images : analyse des paquets avec image-scope
+# (https://github.com/benoitlx/image-scope), historique des builds et visionneuse
+# publiés sur GitHub Pages, rapport dans le résumé du workflow.
+#
+# Prérequis (une fois) : Settings → Pages → Source : « GitHub Actions ».
+name: image-scope
+
+on:
+  workflow_run:
+    workflows: [bluebuild]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch: # relancer l'analyse à la main
+
+permissions:
+  contents: write # branche d'historique
+  pages: write
+  id-token: write
+
+concurrency:
+  group: image-scope
+  cancel-in-progress: false
+
+env:
+  IMAGES: niri niri-nvidia # noms des recettes (`name:`)
+  DATA_BRANCH: image-scope-data # historique des analyses (un seul commit, réécrit)
+  KEEP: 30 # builds gardés par image
+
+jobs:
+  inspect:
+    name: Inspect images
+    # Les builds de pull request ne publient pas d'image.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.event != 'pull_request' && github.event.workflow_run.conclusion != 'cancelled')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Download image-scope
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download --repo benoitlx/image-scope --pattern 'image-scope-*.tar.gz' --dir "$RUNNER_TEMP"
+          sudo tar -xzf "$RUNNER_TEMP/image-scope-x86_64-linux.tar.gz" -C /usr/local/bin
+          image-scope help > /dev/null
+
+      - name: Restore previous analyses
+        run: |
+          repo="https://github.com/$GITHUB_REPOSITORY"
+          if git ls-remote --exit-code --heads "$repo" "$DATA_BRANCH" > /dev/null; then
+            git clone --quiet --depth 1 --branch "$DATA_BRANCH" "$repo" site
+            rm -rf site/.git
+          else
+            mkdir site
+          fi
+
+      # Bases rpm extraites, par couche : les couches inchangées ne sont pas retéléchargées.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/image-scope
+          key: image-scope-${{ github.run_id }}
+          restore-keys: image-scope-
+
+      - name: Inspect
+        run: |
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
+          for image in $IMAGES; do
+            # Une image en échec n'empêche pas de publier les autres.
+            image-scope inspect "ghcr.io/$owner/$image:latest" --site site \
+              || echo "::warning::image-scope could not inspect $image"
+          done
+          image-scope index site --keep "$KEEP" \
+            --summary "$GITHUB_STEP_SUMMARY" \
+            --url "https://$owner.github.io/${GITHUB_REPOSITORY#*/}"
+
+      - name: Save analyses
+        working-directory: site
+        run: |
+          git init --quiet --initial-branch "$DATA_BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+          git commit --quiet --message "image-scope analyses, $(date -u +%F)"
+          git push --quiet --force "https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY" "$DATA_BRANCH"
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+          tar -xzf "$RUNNER_TEMP/image-scope-web.tar.gz" -C _site
+          cp -r site/. _site/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
