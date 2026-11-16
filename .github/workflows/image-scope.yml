@@ -57,7 +57,7 @@ jobs:
           fi
 
       # Bases rpm extraites, par couche : les couches inchangées ne sont pas retéléchargées.
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: ~/.cache/image-scope
           key: image-scope-${{ github.run_id }}
