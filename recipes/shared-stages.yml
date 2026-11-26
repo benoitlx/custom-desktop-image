@@ -7,7 +7,7 @@ stages:
           - apt-get update && apt-get install -y git
           - git clone https://github.com/jakestanger/ironbar.git
           - cd ironbar && RUSTFLAGS="-C target-feature=-crt-static" cargo build --workspace --release
-          - mkdir -p /out/ && mv /ironbar/target/release/ironbard /out/ironbard && /ironbar/target/release/ironbar /out/ironbar
+          - mkdir -p /out/ && mv /ironbar/target/release/ironbard /out/ironbard
 
   - name: matugen
     from: docker.io/library/rust
