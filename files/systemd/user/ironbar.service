@@ -9,8 +9,8 @@ Requisite=graphical-session.target
 ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
-ExecStart=/usr/bin/ironbar
-ExecReload=/usr/bin/ironbar reload
+ExecStart=/usr/bin/ironbard
+ExecReload=/usr/bin/ironbard reload
 Restart=on-failure
 RestartSec=1s
 
