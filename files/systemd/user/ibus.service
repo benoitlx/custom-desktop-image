@@ -1,14 +1,19 @@
 # Copied with bluebuild
 
 [Unit]
-Description=Ibus (used for japanese input with mozc)
+Description=IBus daemon (Japanese input with mozc)
 PartOf=graphical-session.target
 After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-Type=oneshot
-ExecStart=/usr/bin/ibus start
+# ibus-daemon must be the main process: "ibus start" forks it and exits,
+# so a oneshot unit got it killed right after login (#18).
+Type=dbus
+BusName=org.freedesktop.IBus
+ExecStart=/usr/bin/ibus-daemon --xim --replace
+Restart=on-failure
+Slice=session.slice
 
 [Install]
 WantedBy=graphical-session.target
