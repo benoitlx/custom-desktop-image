@@ -1,0 +1,12 @@
+{
+  "image": "ghcr.io/benoitlx/niri:latest",
+  "name": "niri",
+  "digest": "sha256:43bc2811fddc00e9e0b068edee729fe80c51d08310faa9ddbe838ec43429c0bd",
+  "version": "45.20261126.0",
+  "created": "2026-11-27T08:58:59.193033379+00:00",
+  "inspected_at": "2026-11-27T09:12:48+0000",
+  "release": "F45",
+  "packages": 1675,
+  "size": 5870882541,
+  "pending_fixes": 7
+}
