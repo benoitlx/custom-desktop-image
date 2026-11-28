@@ -1,17 +1,17 @@
 # Copied with bluebuild
 
 [Unit]
-Description=IBus daemon (Japanese input with mozc)
+Description=IBus (Japanese input with mozc), Wayland input-method mode
 PartOf=graphical-session.target
 After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-# ibus-daemon must be the main process: "ibus start" forks it and exits,
-# so a oneshot unit got it killed right after login (#18).
-Type=dbus
-BusName=org.freedesktop.IBus
-ExecStart=/usr/bin/ibus-daemon --xim --replace
+# Same as "ibus start" on Wayland, but as a long-running service (#18):
+# ibus-ui-gtk3 talks zwp_input_method_v2 to niri (text-input-v3 clients such as
+# kitty/helix, GTK, Qt) and spawns ibus-daemon; --xim covers Xwayland apps.
+# GTK_IM_MODULE/QT_IM_MODULE must stay unset in the session.
+ExecStart=/usr/libexec/ibus-ui-gtk3 --enable-wayland-im --exec-daemon --daemon-args "--xim --panel disable"
 Restart=on-failure
 Slice=session.slice
 
